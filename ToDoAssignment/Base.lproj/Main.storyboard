@@ -33,7 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="ToDo List App" id="o6n-V9-wcB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjr-9S-kPQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjr-9S-kPQ">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="FUM-Gb-91v" id="mQi-3y-9ub"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfA-Qk-18S" userLabel="First Responder" sceneMemberID="firstResponder"/>

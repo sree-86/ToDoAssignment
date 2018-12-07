@@ -32,7 +32,42 @@ class ToDoViewController: UITableViewController {
         cell.accessoryType = item.completed ? .checkmark : .none
         return cell
     }
-
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Save", style: .default) { (action) in
+            
+            let newItem = Items(context: self.context)
+            newItem.name = textField.text!
+            self.items.append(newItem)
+            self.saveItems()
+        }
+        alert.addAction(action)
+        
+        
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Add a New Category"
+        }
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func saveItems(){
+        
+        do{
+            try context.save()
+        }catch {
+            print("Error saving item with \(error)")
+        }
+        
+        tableView.reloadData()
+        
+    }
 
 }
 
