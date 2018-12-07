@@ -20,6 +20,35 @@ class ToDoViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        items[indexPath.row].completed = !items[indexPath.row].completed
+        
+        saveItems()
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == .delete) {
+            let item = items[indexPath.row]
+            items.remove(at: indexPath.row)
+            context.delete(item)
+            
+            do {
+                try context.save()
+            } catch {
+                print("Error deleting item with \(error)")
+            }
+            tableView.deleteRows(at: [indexPath], with: .automatic)  //includes updating UI so reloading is not necessary
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -67,6 +96,18 @@ class ToDoViewController: UITableViewController {
         
         tableView.reloadData()
         
+    }
+    
+    func loadItems(){
+        let request: NSFetchRequest<Items> = Items.fetchRequest()
+        
+        do {
+            items = try context.fetch(request)
+        }catch{
+            print("Error fetching data from context \(error)")
+        }
+        
+        tableView.reloadData()
     }
 
 }
