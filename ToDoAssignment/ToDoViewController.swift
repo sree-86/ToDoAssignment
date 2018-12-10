@@ -52,7 +52,7 @@ class ToDoViewController: UITableViewController {
         {
             if toDo.important
             {
-                cell.textLabel?.text = "★" + name
+                cell.textLabel?.text = "‼️" + name
                 
             }
             else{
@@ -60,6 +60,24 @@ class ToDoViewController: UITableViewController {
             }
         }
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let addVC = segue.destination as? AddToDoViewController
+        {
+            addVC.previousVC = self
+        }
+        
+        if let completeVC = segue.destination as? CompleteToDoViewController
+        {
+            if let toDo = sender as? ToDoCoreData{
+                completeVC.selectedTodo = toDo
+                completeVC.previousVC = self
+                
+            }
+        }
+        
     }
     
 

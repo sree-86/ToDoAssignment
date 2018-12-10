@@ -18,6 +18,7 @@
 		3067EDB121BB252B00704D29 /* Item.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3067EDAF21BB252B00704D29 /* Item.xcdatamodeld */; };
 		3067EDB321BDF30D00704D29 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067EDB221BDF30D00704D29 /* ToDo.swift */; };
 		3067EDB521BDF81000704D29 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067EDB421BDF81000704D29 /* AddToDoViewController.swift */; };
+		3067EDB721BDFF2B00704D29 /* CompleteToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3067EDB621BDFF2B00704D29 /* CompleteToDoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3067EDB021BB252B00704D29 /* Item.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Item.xcdatamodel; sourceTree = "<group>"; };
 		3067EDB221BDF30D00704D29 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		3067EDB421BDF81000704D29 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		3067EDB621BDFF2B00704D29 /* CompleteToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteToDoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				3067ED7E21BB24E400704D29 /* AppDelegate.swift */,
 				3067ED8021BB24E400704D29 /* ToDoViewController.swift */,
 				3067ED8221BB24E400704D29 /* Main.storyboard */,
+				3067EDB621BDFF2B00704D29 /* CompleteToDoViewController.swift */,
 				3067EDB421BDF81000704D29 /* AddToDoViewController.swift */,
 				3067ED8821BB24E600704D29 /* Assets.xcassets */,
 				3067ED8A21BB24E600704D29 /* LaunchScreen.storyboard */,
@@ -271,6 +274,7 @@
 				3067EDB121BB252B00704D29 /* Item.xcdatamodeld in Sources */,
 				3067EDB321BDF30D00704D29 /* ToDo.swift in Sources */,
 				3067ED8121BB24E400704D29 /* ToDoViewController.swift in Sources */,
+				3067EDB721BDFF2B00704D29 /* CompleteToDoViewController.swift in Sources */,
 				3067ED8721BB24E400704D29 /* ToDoAssignment.xcdatamodeld in Sources */,
 				3067EDB521BDF81000704D29 /* AddToDoViewController.swift in Sources */,
 				3067ED7F21BB24E400704D29 /* AppDelegate.swift in Sources */,

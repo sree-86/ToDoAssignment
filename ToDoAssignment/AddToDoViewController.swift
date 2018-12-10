@@ -10,6 +10,8 @@ import UIKit
 
 class AddToDoViewController: UIViewController {
     
+    var previousVC = ToDoViewController()
+    
     @IBOutlet weak var titleTextField: UITextField!
     
     @IBOutlet weak var importantSwitch: UISwitch!
