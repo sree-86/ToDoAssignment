@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,6 +37,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjr-9S-kPQ">
                             <connections>
                                 <action selector="addButtonPressed:" destination="FUM-Gb-91v" id="Kd3-WD-E9T"/>
+                                <segue destination="5zn-pS-lSB" kind="show" id="edh-wy-qIj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -43,6 +45,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IfA-Qk-18S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="65.217391304347828"/>
+        </scene>
+        <!--Add To Do View Controller-->
+        <scene sceneID="Y6u-mG-P5M">
+            <objects>
+                <viewController id="5zn-pS-lSB" customClass="AddToDoViewController" customModule="ToDoAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dcD-78-0N3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBu-Rf-KNo">
+                                <rect key="frame" x="166" y="104" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wou-BB-H1r">
+                                <rect key="frame" x="40" y="154" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Important" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47g-9k-aMg">
+                                <rect key="frame" x="148" y="211" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-AD-Csd">
+                                <rect key="frame" x="163" y="289" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdk-F3-OaL">
+                                <rect key="frame" x="150.5" y="367" width="74" height="30"/>
+                                <state key="normal" title="Add to List"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="5zn-pS-lSB" eventType="touchUpInside" id="v60-2X-G69"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VfK-AD-Csd" firstAttribute="top" secondItem="47g-9k-aMg" secondAttribute="bottom" constant="57" id="0Rs-qk-NQv"/>
+                            <constraint firstItem="wou-BB-H1r" firstAttribute="top" secondItem="jBu-Rf-KNo" secondAttribute="bottom" constant="29" id="Lgz-qa-lm6"/>
+                            <constraint firstItem="aaO-ty-Kh4" firstAttribute="trailing" secondItem="wou-BB-H1r" secondAttribute="trailing" constant="40" id="OEQ-NK-wdc"/>
+                            <constraint firstItem="47g-9k-aMg" firstAttribute="top" secondItem="wou-BB-H1r" secondAttribute="bottom" constant="27" id="QzZ-oP-vX0"/>
+                            <constraint firstItem="jBu-Rf-KNo" firstAttribute="top" secondItem="aaO-ty-Kh4" secondAttribute="top" constant="40" id="SA8-dg-Car"/>
+                            <constraint firstItem="Kdk-F3-OaL" firstAttribute="centerX" secondItem="dcD-78-0N3" secondAttribute="centerX" id="hVl-ec-pCf"/>
+                            <constraint firstItem="VfK-AD-Csd" firstAttribute="centerX" secondItem="dcD-78-0N3" secondAttribute="centerX" id="o6f-hZ-23X"/>
+                            <constraint firstItem="Kdk-F3-OaL" firstAttribute="top" secondItem="VfK-AD-Csd" secondAttribute="bottom" constant="47" id="stz-Oh-Vbu"/>
+                            <constraint firstItem="wou-BB-H1r" firstAttribute="centerX" secondItem="dcD-78-0N3" secondAttribute="centerX" id="xku-hS-wdV"/>
+                            <constraint firstItem="wou-BB-H1r" firstAttribute="leading" secondItem="aaO-ty-Kh4" secondAttribute="leading" constant="40" id="yEa-A0-gRG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aaO-ty-Kh4"/>
+                    </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="VfK-AD-Csd" id="Upo-ye-5xq"/>
+                        <outlet property="titleTextField" destination="wou-BB-H1r" id="DdK-sr-KoR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVm-lg-dwq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1580" y="64.31784107946028"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vjy-pS-enx">
