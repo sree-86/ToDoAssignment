@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class ToDoViewController: UITableViewController {
     
@@ -36,6 +35,24 @@ class ToDoViewController: UITableViewController {
             }
         }
     }
+    func createToDos() -> [ToDo]
+    {
+        let eggs = ToDo()
+        eggs.name = "Buy Eggs"
+        eggs.important = true
+        
+        let dog = ToDo()
+        dog.name = "Walk the Dog"
+        
+        let cheese = ToDo()
+        cheese.name = "Eat Cheese"
+        
+        return [eggs, dog, cheese]
+        
+    }
+    
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDos.count
@@ -62,6 +79,13 @@ class ToDoViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let toDo = toDos[indexPath.row]
+        performSegue(withIdentifier: "moveToComplete", sender: toDo)
+    }
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let addVC = segue.destination as? AddToDoViewController
@@ -80,6 +104,5 @@ class ToDoViewController: UITableViewController {
         
     }
     
-
 }
 
