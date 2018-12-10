@@ -11,13 +11,11 @@ import CoreData
 
 class ToDoViewController: UITableViewController {
     
-    var items = [Items]()
+    var toDos : [ToDoCoreData] = []
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //toDos = createToDos()
     }
     
     
@@ -62,30 +60,6 @@ class ToDoViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
-        
-        var textField = UITextField()
-        
-        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
-        
-        let action = UIAlertAction(title: "Save", style: .default) { (action) in
-            
-            let newItem = Items(context: self.context)
-            newItem.name = textField.text!
-            self.items.append(newItem)
-            self.saveItems()
-        }
-        alert.addAction(action)
-        
-        
-        alert.addTextField { (field) in
-            textField = field
-            textField.placeholder = "Add a New Category"
-        }
-        
-        present(alert, animated: true, completion: nil)
-    }
-    
     func saveItems(){
         
         do{
@@ -97,6 +71,41 @@ class ToDoViewController: UITableViewController {
         tableView.reloadData()
         
     }
+    
+    
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        print("1 ")
+        let alert = UIAlertController(title: "Add New Item", message: "", preferredStyle: .alert)
+        print("2")
+        let action = UIAlertAction(title: "Save", style: .default) { (action) in
+            print("3")
+            let newItem = Items(context: self.context)
+            print("4")
+            newItem.name = textField.text!
+            print("5")
+            self.items.append(newItem)
+            self.saveItems()
+        }
+        
+        
+        alert.addAction(action)
+        
+            alert.addTextField { (field) in
+             textField = field
+             textField.placeholder = "Add a New ToDo Item"
+        
+            
+    }
+    
+        
+         present(alert, animated: true, completion: nil)
+       
+        
+    }
+    
+    
     
     func loadItems(){
         let request: NSFetchRequest<Items> = Items.fetchRequest()

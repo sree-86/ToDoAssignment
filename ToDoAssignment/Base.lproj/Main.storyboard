@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDo List App-->
+        <!--ToDo List-->
         <scene sceneID="HcJ-50-EOy">
             <objects>
                 <tableViewController id="FUM-Gb-91v" customClass="ToDoViewController" customModule="ToDoAssignment" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,10 +32,10 @@
                             <outlet property="delegate" destination="FUM-Gb-91v" id="WND-eT-efy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ToDo List App" id="o6n-V9-wcB">
+                    <navigationItem key="navigationItem" title="ToDo List" id="o6n-V9-wcB" userLabel="ToDo List">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="cjr-9S-kPQ">
                             <connections>
-                                <action selector="addButtonPressed:" destination="FUM-Gb-91v" id="mQi-3y-9ub"/>
+                                <action selector="addButtonPressed:" destination="FUM-Gb-91v" id="Kd3-WD-E9T"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
