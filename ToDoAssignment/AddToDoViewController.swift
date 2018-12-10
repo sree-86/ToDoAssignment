@@ -23,6 +23,7 @@ class AddToDoViewController: UIViewController {
     
     @IBOutlet weak var importantSwitch: UISwitch!
     
+    @IBOutlet weak var details: UITextField!
     
     
     
@@ -35,19 +36,7 @@ class AddToDoViewController: UIViewController {
     
     @IBAction func addTapped(_ sender: UIButton) {
         
-        /*
-         let toDo = ToDo()
-         if let titleText = titleTextField.text
-         {
-         toDo.name = titleText
-         toDo.important = importantSwitch.isOn
-         
-         previousVC.toDos.append(toDo)
-         previousVC.tableView.reloadData()
-         
-         navigationController?.popToRootViewController(animated: true)
-         }
-         */
+        
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
         {
             let toDo = ToDoCoreData(entity: ToDoCoreData.entity(), insertInto: context)
@@ -55,6 +44,7 @@ class AddToDoViewController: UIViewController {
             {
                 toDo.name = titleText
                 toDo.important = importantSwitch.isOn
+                toDo.detail = details.text!
             }
             try? context.save()
             navigationController?.popToRootViewController(animated: true)

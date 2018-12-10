@@ -74,7 +74,7 @@ class ToDoTableViewController: UITableViewController {
         {
             if toDo.important
             {
-                cell.textLabel?.text = "★" + name
+                cell.textLabel?.text = "‼️" + name
                 
             }
             else{

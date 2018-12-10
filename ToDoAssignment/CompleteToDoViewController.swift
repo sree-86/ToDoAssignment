@@ -18,11 +18,13 @@ class CompleteToDoViewController: UIViewController {
     var selectedTodo : ToDoCoreData?
     
     
+    @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleLabel.text = selectedTodo?.name
+        detailLabel.text = selectedTodo?.detail
     }
     
     
