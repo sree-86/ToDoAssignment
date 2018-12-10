@@ -5,12 +5,16 @@
 //  Created by Sreeram Ramakrishnan on 2018-12-09.
 //  Copyright © 2018 Centennial College. All rights reserved.
 //
+//Student Name: Sreeram Ramakrishnan
+//Student ID: 301042442
+//Name of the App: ToDoAssignment
+//File Name: CompleteToDoViewController.swift
 
 import UIKit
 
 class CompleteToDoViewController: UIViewController {
     
-    var previousVC = ToDoViewController()
+    var previousVC = ToDoTableViewController()
     var selectedTodo : ToDoCoreData?
     
     
@@ -34,7 +38,22 @@ class CompleteToDoViewController: UIViewController {
                 
             }
         }
-        
+        /*
+         var index = 0
+         for toDo in previousVC.toDos
+         {
+         if toDo.name == selectedTodo.name
+         {
+         previousVC.toDos.remove(at: index)
+         previousVC.tableView.reloadData()
+         navigationController?.popViewController(animated: true)
+         break
+         
+         }
+         index += 1
+         }
+         
+         */
     }
     
     
